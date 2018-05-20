@@ -60,6 +60,9 @@ INTNUM 			= 0|[1-9][0-9]*
 <YYINITIAL> "a"				{ save(new Data("A: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.A, new Integer(7)); }
 <YYINITIAL> "g"				{ save(new Data("G: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.G, new Integer(8)); }
 <YYINITIAL> "o"				{ save(new Data("O: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.O, new Integer(9)); }
+<YYINITIAL> "System"				{ save(new Data("public: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.SYSTEM); }
+<YYINITIAL> "out"				{ save(new Data("public: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.OUT); }
+<YYINITIAL> "println"				{ save(new Data("public: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.PRINTLN); }
 <YYINITIAL> {
 	"="				{ save(new Data("Asignacion: Asigna un valor",yytext(),"Simbolo",1));												return symbol(sym.ASIGNACION); }
 	"+"					{ save(new Data("Suma: Es un operador",yytext(),"Operador",1));													return symbol(sym.SUMA); }
@@ -75,6 +78,6 @@ INTNUM 			= 0|[1-9][0-9]*
 	")"					{ save(new Data("Parentesis der: Separador de variables",yytext(),"Simbolo",1));								return symbol(sym.PAR_DER); }
 	{IDE}                { save(new Data("Identificador: Identifica una variable o método",yytext(),0,1,"Identificador",1));			return symbol(sym.IDE, yytext()); }
 	{INTNUM}            { save(new Data("Numero tipo entero: Entero",yytext(), new Integer(yytext()), 0,"Numero",1));					return symbol(sym.NUMI, new Integer(yytext())); }
-	{WHITE_SPACE}		{ 	System.out.println("Un espacio"); }
+	{WHITE_SPACE}		{ /*Nothing to do*/ }
 }	
-[^]					{throw new Error("Illegarl caracter < "+ yytext()+" >");}
+[^]					{ return null; }

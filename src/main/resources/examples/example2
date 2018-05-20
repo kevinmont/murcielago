@@ -1,5 +1,5 @@
 public void e2(){
- float a; float b;
+ float a; float bñ
  expresion=u*o; 
  System.out.println(expresion);
 }

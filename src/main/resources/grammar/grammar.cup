@@ -5,6 +5,7 @@
 
 package mx.com.mont.murcielago.grammar;
 
+import mx.com.mont.murcielago.lexer.LexerF;
 import java_cup.runtime.*;
 import java.io.*;
 
@@ -51,12 +52,13 @@ parser code {:
         /* Add to the end of the StringBuilder error message created in
            this method the message that was passed into this method. */
         m.append(" : "+message);
+		m.append(" Illegal caracter < "+((LexerF)super.getScanner()).yytext()+" >");
         console.setText(m.toString());
 		hasError=true;
-        System.err.println(m);
+        //System.err.println(m); // if we want to see errors in console 
     }
 
-    public void report_fatal_error(String message, Object info) {
+    public void report_fatal_error(String message, Object info) throws Exception {
         report_error(message, info);
     }
 :}
@@ -64,14 +66,13 @@ parser code {:
 // Terminals (tokens returned by the scanner). */
 terminal PAR_DER, PAR_IZQ, LL_IZQ, LL_DER, COMA, SEMICOLON, PUNTO;
 terminal ASIGNACION, DIVI, SUMA, RESTA, MULT;
-terminal PUBLIC, VOID, FLOAT, M, U, R, C, I, E, L, A, G, O;
+terminal PUBLIC, VOID, FLOAT, M, U, R, C, I, E, L, A, G, O, SYSTEM, OUT, PRINTLN;
 terminal IDE;
 terminal NUMI;
 
 non terminal inicio;     // used to store evaluated subexpressions
 non terminal body;
 non terminal param, murcielago, operador, operacion, asignacion, asignar;
-non terminal suma,resta, multiplicacion, division;
 non terminal dato;
 // Precedences */
 precedence right ASIGNACION;
@@ -80,28 +81,35 @@ precedence left LL_IZQ, LL_DER, PAR_IZQ, PAR_DER;
  
 start with inicio;
 
-inicio ::= PUBLIC VOID IDE PAR_IZQ param PAR_DER LL_IZQ body LL_DER;
+inicio ::= PUBLIC VOID IDE PAR_IZQ param PAR_DER LL_IZQ body LL_DER
+		| PUBLIC VOID IDE PAR_IZQ PAR_DER LL_IZQ body LL_DER;
  	
 param ::= FLOAT IDE COMA param
 		| FLOAT murcielago COMA param
 		| FLOAT murcielago
 		| FLOAT IDE
-		
 		;
 murcielago ::= M | U | R | C | I | E | L | A | G| O; 
 				
 body ::= IDE ASIGNACION asignacion SEMICOLON
-			| IDE ASIGNACION asignacion SEMICOLON body;
+		| IDE ASIGNACION asignacion SEMICOLON body
+		| FLOAT dato SEMICOLON body
+		| FLOAT dato SEMICOLON
+		| SYSTEM PUNTO OUT PUNTO PRINTLN PAR_IZQ dato PAR_DER SEMICOLON body
+		| SYSTEM PUNTO OUT PUNTO PRINTLN PAR_IZQ dato PAR_DER SEMICOLON
+		;
 
 asignacion::= PAR_IZQ FLOAT PAR_DER asignar
-			| asignar;
+			| asignar
+			;
 
 asignar::= operacion
-			| PAR_IZQ operacion PAR_DER
-			| PAR_IZQ operacion PAR_DER operador asignar;
+		| PAR_IZQ operacion PAR_DER
+		| PAR_IZQ operacion PAR_DER operador asignar;
 				
 operacion::= dato
-			| dato operador operacion;
+			| dato operador operacion
+			;
 			
 operador::= SUMA | RESTA |DIVI | MULT;		 
 

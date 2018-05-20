@@ -42,12 +42,12 @@ public class LexerF implements java_cup.runtime.Scanner {
    * Translates characters to character classes
    */
   private static final String ZZ_CMAP_PACKED = 
-    "\11\0\1\1\1\1\1\0\1\1\1\1\22\0\1\1\7\0\1\37"+
-    "\1\40\1\30\1\26\1\33\1\27\1\32\1\31\1\4\11\3\1\0"+
-    "\1\34\1\0\1\25\3\0\32\2\6\0\1\17\1\7\1\12\1\15"+
-    "\1\23\1\16\1\24\1\2\1\11\2\2\1\10\1\21\1\2\1\14"+
-    "\1\5\1\2\1\22\1\2\1\20\1\6\1\13\4\2\1\35\1\1"+
-    "\1\36\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uff92\0";
+    "\11\0\1\1\1\1\1\0\1\1\1\1\22\0\1\1\7\0\1\43"+
+    "\1\44\1\34\1\32\1\37\1\33\1\36\1\35\1\4\11\3\1\0"+
+    "\1\40\1\0\1\31\3\0\22\2\1\25\7\2\6\0\1\17\1\7"+
+    "\1\12\1\15\1\23\1\16\1\24\1\2\1\11\2\2\1\10\1\21"+
+    "\1\30\1\14\1\5\1\2\1\22\1\27\1\20\1\6\1\13\2\2"+
+    "\1\26\1\2\1\41\1\1\1\42\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uff92\0";
 
   /** 
    * Translates characters to character classes
@@ -62,12 +62,13 @@ public class LexerF implements java_cup.runtime.Scanner {
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\1\2\1\3\2\4\1\3\1\5\1\6"+
     "\1\7\1\10\1\3\1\11\1\3\1\12\1\13\1\14"+
-    "\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24"+
-    "\1\25\1\26\1\27\1\30\1\31\1\32\7\3\1\33"+
-    "\2\3\1\34\1\35";
+    "\1\15\1\16\1\3\1\17\1\20\1\21\1\22\1\23"+
+    "\1\24\1\25\1\26\1\27\1\30\1\31\1\32\11\3"+
+    "\1\33\4\3\1\34\4\3\1\35\1\3\1\36\1\3"+
+    "\1\37\1\40";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[43];
+    int [] result = new int[57];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -92,15 +93,17 @@ public class LexerF implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\41\0\41\0\102\0\143\0\41\0\204\0\102"+
-    "\0\102\0\102\0\102\0\245\0\102\0\306\0\102\0\102"+
-    "\0\102\0\102\0\102\0\41\0\41\0\41\0\41\0\41"+
-    "\0\41\0\41\0\41\0\41\0\41\0\41\0\41\0\347"+
-    "\0\u0108\0\u0129\0\u014a\0\u016b\0\u018c\0\u01ad\0\102\0\u01ce"+
-    "\0\u01ef\0\102\0\102";
+    "\0\0\0\45\0\45\0\112\0\157\0\45\0\224\0\112"+
+    "\0\112\0\112\0\112\0\271\0\336\0\u0103\0\112\0\112"+
+    "\0\112\0\112\0\112\0\u0128\0\45\0\45\0\45\0\45"+
+    "\0\45\0\45\0\45\0\45\0\45\0\45\0\45\0\45"+
+    "\0\u014d\0\u0172\0\u0197\0\u01bc\0\u01e1\0\u0206\0\u022b\0\u0250"+
+    "\0\u0275\0\112\0\u029a\0\u02bf\0\u02e4\0\u0309\0\112\0\u032e"+
+    "\0\u0353\0\u0378\0\u039d\0\112\0\u03c2\0\112\0\u03e7\0\112"+
+    "\0\112";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[43];
+    int [] result = new int[57];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -125,18 +128,24 @@ public class LexerF implements java_cup.runtime.Scanner {
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\4"+
     "\1\11\1\12\1\13\1\14\1\15\1\4\1\16\1\17"+
-    "\1\4\1\20\1\21\1\22\1\23\1\24\1\25\1\26"+
-    "\1\27\1\30\1\31\1\32\1\33\1\34\1\35\1\36"+
-    "\1\37\43\0\23\4\17\0\2\5\36\0\4\4\1\40"+
-    "\16\4\16\0\12\4\1\41\10\4\16\0\6\4\1\42"+
-    "\14\4\16\0\5\4\1\43\15\4\16\0\7\4\1\44"+
-    "\13\4\16\0\12\4\1\45\10\4\16\0\6\4\1\46"+
-    "\14\4\16\0\13\4\1\47\7\4\16\0\15\4\1\50"+
-    "\5\4\16\0\7\4\1\51\13\4\16\0\16\4\1\52"+
-    "\4\4\16\0\10\4\1\53\12\4\14\0";
+    "\1\4\1\20\1\21\1\22\1\23\1\24\3\4\1\25"+
+    "\1\26\1\27\1\30\1\31\1\32\1\33\1\34\1\35"+
+    "\1\36\1\37\1\40\47\0\27\4\17\0\2\5\42\0"+
+    "\4\4\1\41\13\4\1\42\6\4\16\0\12\4\1\43"+
+    "\14\4\16\0\4\4\1\44\22\4\16\0\6\4\1\45"+
+    "\20\4\16\0\24\4\1\46\2\4\16\0\5\4\1\47"+
+    "\21\4\16\0\7\4\1\50\17\4\16\0\7\4\1\51"+
+    "\17\4\16\0\16\4\1\52\10\4\16\0\12\4\1\53"+
+    "\14\4\16\0\25\4\1\54\1\4\16\0\6\4\1\55"+
+    "\20\4\16\0\26\4\1\56\16\0\13\4\1\57\13\4"+
+    "\16\0\15\4\1\60\11\4\16\0\16\4\1\61\10\4"+
+    "\16\0\7\4\1\62\17\4\16\0\16\4\1\63\10\4"+
+    "\16\0\16\4\1\64\10\4\16\0\21\4\1\65\5\4"+
+    "\16\0\10\4\1\66\16\4\16\0\6\4\1\67\20\4"+
+    "\16\0\17\4\1\70\7\4\16\0\26\4\1\71\14\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[528];
+    int [] result = new int[1036];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -174,10 +183,10 @@ public class LexerF implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\2\11\2\1\1\11\15\1\14\11\14\1";
+    "\1\0\2\11\2\1\1\11\16\1\14\11\31\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[43];
+    int [] result = new int[57];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -290,7 +299,7 @@ public class LexerF implements java_cup.runtime.Scanner {
     char [] map = new char[0x110000];
     int i = 0;  /* index in packed string  */
     int j = 0;  /* index in unpacked array */
-    while (i < 136) {
+    while (i < 144) {
       int  count = packed.charAt(i++);
       char value = packed.charAt(i++);
       do map[j++] = value; while (--count > 0);
@@ -655,121 +664,133 @@ public class LexerF implements java_cup.runtime.Scanner {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
-            { throw new Error("Illegarl caracter < "+ yytext()+" >");
+            { return null;
             }
-          case 30: break;
+          case 33: break;
           case 2: 
-            { System.out.println("Un espacio");
+            { /*Nothing to do*/
             }
-          case 31: break;
+          case 34: break;
           case 3: 
             { save(new Data("Identificador: Identifica una variable o método",yytext(),0,1,"Identificador",1));			return symbol(sym.IDE, yytext());
             }
-          case 32: break;
+          case 35: break;
           case 4: 
             { save(new Data("Numero tipo entero: Entero",yytext(), new Integer(yytext()), 0,"Numero",1));					return symbol(sym.NUMI, new Integer(yytext()));
             }
-          case 33: break;
+          case 36: break;
           case 5: 
             { save(new Data("U: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.U, new Integer(1));
             }
-          case 34: break;
+          case 37: break;
           case 6: 
             { save(new Data("L: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.L, new Integer(6));
             }
-          case 35: break;
+          case 38: break;
           case 7: 
             { save(new Data("I: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.I, new Integer(4));
             }
-          case 36: break;
+          case 39: break;
           case 8: 
             { save(new Data("C: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.C, new Integer(3));
             }
-          case 37: break;
+          case 40: break;
           case 9: 
             { save(new Data("O: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.O, new Integer(9));
             }
-          case 38: break;
+          case 41: break;
           case 10: 
             { save(new Data("A: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.A, new Integer(7));
             }
-          case 39: break;
+          case 42: break;
           case 11: 
             { save(new Data("M: Tipo de acceso",yytext(),"Palabra reservada ",1));								 	return symbol(sym.M, new Integer(0));
             }
-          case 40: break;
+          case 43: break;
           case 12: 
             { save(new Data("R: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.R, new Integer(2));
             }
-          case 41: break;
+          case 44: break;
           case 13: 
             { save(new Data("E: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.E, new Integer(5));
             }
-          case 42: break;
+          case 45: break;
           case 14: 
             { save(new Data("G: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.G, new Integer(8));
             }
-          case 43: break;
+          case 46: break;
           case 15: 
             { save(new Data("Asignacion: Asigna un valor",yytext(),"Simbolo",1));												return symbol(sym.ASIGNACION);
             }
-          case 44: break;
+          case 47: break;
           case 16: 
             { save(new Data("Suma: Es un operador",yytext(),"Operador",1));													return symbol(sym.SUMA);
             }
-          case 45: break;
+          case 48: break;
           case 17: 
             { save(new Data("Resta: Es un operador",yytext(),"Operador",1));												return symbol(sym.RESTA);
             }
-          case 46: break;
+          case 49: break;
           case 18: 
             { save(new Data("Multiplicación: Es un operador",yytext(),"Operador",1));										return symbol(sym.MULT);
             }
-          case 47: break;
+          case 50: break;
           case 19: 
             { save(new Data("Division: Es un operador",yytext(),"Operador",1));												return symbol(sym.DIVI);
             }
-          case 48: break;
+          case 51: break;
           case 20: 
             { save(new Data("Punto",yytext(),"Indicador decimal",1));							return symbol(sym.PUNTO);
             }
-          case 49: break;
+          case 52: break;
           case 21: 
             { save(new Data("Coma: Separador de parametros",yytext(),"Separador de parametros",1));							return symbol(sym.COMA);
             }
-          case 50: break;
+          case 53: break;
           case 22: 
             { save(new Data("Punto y coma: Finaliza una declaracion",yytext(),"Simbolo",1));								return symbol(sym.SEMICOLON);
             }
-          case 51: break;
+          case 54: break;
           case 23: 
             { save(new Data("Llave izq: Abre una declaracion ",yytext(),"Simbolo",1));										return symbol(sym.LL_IZQ);
             }
-          case 52: break;
+          case 55: break;
           case 24: 
             { save(new Data("Llave der: Cierra una declaracion",yytext(),"Simbolo",1));										return symbol(sym.LL_DER);
             }
-          case 53: break;
+          case 56: break;
           case 25: 
             { save(new Data("Parentesis izq: Separador de variables",yytext(),"Simbolo",1));								return symbol(sym.PAR_IZQ);
             }
-          case 54: break;
+          case 57: break;
           case 26: 
             { save(new Data("Parentesis der: Separador de variables",yytext(),"Simbolo",1));								return symbol(sym.PAR_DER);
             }
-          case 55: break;
+          case 58: break;
           case 27: 
+            { save(new Data("public: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.OUT);
+            }
+          case 59: break;
+          case 28: 
             { save(new Data("void: Tipo de retorno",yytext(),"Palabra reserverda",1));										return symbol(sym.VOID);
             }
-          case 56: break;
-          case 28: 
+          case 60: break;
+          case 29: 
             { save(new Data("float: Tipo de dato",yytext(),"Palabra reservada",1));											return new Symbol(sym.FLOAT, yyline+1, yycolumn+1);
             }
-          case 57: break;
-          case 29: 
+          case 61: break;
+          case 30: 
             { save(new Data("public: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.PUBLIC);
             }
-          case 58: break;
+          case 62: break;
+          case 31: 
+            { save(new Data("public: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.SYSTEM);
+            }
+          case 63: break;
+          case 32: 
+            { save(new Data("public: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.PRINTLN);
+            }
+          case 64: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

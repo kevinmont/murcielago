@@ -180,9 +180,8 @@ public class Render extends JFrame{
 						par.setError(false);
 						par.setConsole(textPane);
 							try {
-								par.debug_parse();
+								par.parse();
 							} catch (Exception e) {
-								
 								e.printStackTrace();
 							}
 						isCompilled = true;
@@ -203,7 +202,6 @@ public class Render extends JFrame{
 		JMenuItem mntmTokens = new JMenuItem("Tokens");
 		addListeners(mntmTokens, (ActionEvent arg0)-> {
 				if (isCompilled) {
-					// Execute this
 					table.addData();
 					table.setVisible(true);
 				}

@@ -1,6 +1,5 @@
 public void e5(){
-float a;float g;float m;
-	expresion=a*g/m;
-System.out.println(expresion);
-
+ float a;float g;float m;
+ expresion=a*g/m;
+ System.out.println(expresion);
 }

@@ -1,7 +1,6 @@
 public void e3(float l,float a){
-	
-float l;float a;
-
-expresion=l-a;
-System.out.println(expresion);
+ float l;
+ float a;
+ expresion=l-a;
+ System.out.println(expresion);
 }

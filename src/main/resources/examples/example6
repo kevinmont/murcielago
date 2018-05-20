@@ -1,0 +1,6 @@
+public void e6(){
+float a;float m;
+	expresion=ma*8;   
+System.out.println(expresion);
+
+}

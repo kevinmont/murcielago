@@ -1,0 +1,4 @@
+public void ar( ){
+ float a,float b  expresion =(float) (a+g );
+ System.out.println(expresion);
+}

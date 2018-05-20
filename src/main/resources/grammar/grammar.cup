@@ -1,0 +1,109 @@
+/*
+   Simple +/-/* expression language; 
+   parser evaluates constant expressions on the fly
+*/
+
+package mx.com.mont.murcielago.grammar;
+
+import java_cup.runtime.*;
+import java.io.*;
+
+parser code {:
+	 /* Change the method report_error so it will display the line and
+       column of where the error occurred in the input as well as the
+       reason for the error which is passed into the method in the
+       String 'message'. */
+	private javax.swing.JTextPane console;
+	private boolean hasError;
+	public void setError(boolean e){ this.hasError=e;}
+	public boolean hasError(){ return this.hasError; }
+	public void setConsole(javax.swing.JTextPane comp){
+		this.console=comp;
+	}
+    public void report_error(String message, Object info) {
+   
+        /* Create a StringBuilder called 'm' with the string 'Error' in it. */
+        StringBuilder m = new StringBuilder("Error");
+   
+        /* Check if the information passed to the method is the same
+           type as the type java_cup.runtime.Symbol. */
+        if (info instanceof java_cup.runtime.Symbol) {
+            /* Declare a java_cup.runtime.Symbol object 's' with the
+               information in the object info that is being typecasted
+               as a java_cup.runtime.Symbol object. */
+            java_cup.runtime.Symbol s = ((java_cup.runtime.Symbol) info);
+   
+            /* Check if the line number in the input is greater or
+               equal to zero. */
+            if (s.left >= 0) {                
+                /* Add to the end of the StringBuilder error message
+                   the line number of the error in the input. */
+                m.append(" in line "+(s.left+1));   
+                /* Check if the column number in the input is greater
+                   or equal to zero. */
+                if (s.right >= 0)                    
+                    /* Add to the end of the StringBuilder error message
+                       the column number of the error in the input. */
+                    m.append(", column "+(s.right));
+            }
+        }
+   
+        /* Add to the end of the StringBuilder error message created in
+           this method the message that was passed into this method. */
+        m.append(" : "+message);
+        console.setText(m.toString());
+		hasError=true;
+        System.err.println(m);
+    }
+
+    public void report_fatal_error(String message, Object info) {
+        report_error(message, info);
+    }
+:}
+// define how to connect to the scanner! */
+// Terminals (tokens returned by the scanner). */
+terminal PAR_DER, PAR_IZQ, LL_IZQ, LL_DER, COMA, SEMICOLON, PUNTO;
+terminal ASIGNACION, DIVI, SUMA, RESTA, MULT;
+terminal PUBLIC, VOID, FLOAT, M, U, R, C, I, E, L, A, G, O;
+terminal IDE;
+terminal NUMI;
+
+non terminal inicio;     // used to store evaluated subexpressions
+non terminal body;
+non terminal param, murcielago, operador, operacion, asignacion, asignar;
+non terminal suma,resta, multiplicacion, division;
+non terminal dato;
+// Precedences */
+precedence right ASIGNACION;
+precedence left  SUMA, RESTA;
+precedence left LL_IZQ, LL_DER, PAR_IZQ, PAR_DER;
+ 
+start with inicio;
+
+inicio ::= PUBLIC VOID IDE PAR_IZQ param PAR_DER LL_IZQ body LL_DER;
+ 	
+param ::= FLOAT IDE COMA param
+		| FLOAT murcielago COMA param
+		| FLOAT murcielago
+		| FLOAT IDE
+		
+		;
+murcielago ::= M | U | R | C | I | E | L | A | G| O; 
+				
+body ::= IDE ASIGNACION asignacion SEMICOLON
+			| IDE ASIGNACION asignacion SEMICOLON body;
+
+asignacion::= PAR_IZQ FLOAT PAR_DER asignar
+			| asignar;
+
+asignar::= operacion
+			| PAR_IZQ operacion PAR_DER
+			| PAR_IZQ operacion PAR_DER operador asignar;
+				
+operacion::= dato
+			| dato operador operacion;
+			
+operador::= SUMA | RESTA |DIVI | MULT;		 
+
+dato::= murcielago | NUMI | IDE;
+

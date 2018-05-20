@@ -1,0 +1,2 @@
+java -cp java-cup-10k.jar java_cup.Main src/main/resources/grammar/grammar.cup 
+

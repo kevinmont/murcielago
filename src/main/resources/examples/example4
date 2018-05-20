@@ -1,0 +1,10 @@
+public void e4(){
+	
+float r;float u;float m;
+expresion=(u+m/r)*u;
+	
+expresion=(float)(6+78)-(434*67/45);
+
+System.out.println(expresion);
+
+}

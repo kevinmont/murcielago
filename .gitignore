@@ -1,0 +1,7 @@
+src/main/resources/grammar/java-cup-10k.jar
+src/main/resources/lexer/output
+src/main/resources/lexer/jflex-1.6.1.jar
+target/
+.settings/
+.classpath
+.project

@@ -54,8 +54,8 @@ public class Table extends ShowData {
 		for (String val : table.keySet()) {
 			Data tipo;
 			tipo = table.get(val);
-			model.addRow(new Object[] { tipo.getType(), tipo.getVar(), tipo.getValue(), tipo.getState(),
-					tipo.getTypeValue(), tipo.getCounter() });
+			model.addRow(new Object[] { tipo.getType(), tipo.getVar(), tipo.getTypeValue(), tipo.getCounter(),
+					tipo.getValue(), tipo.getState() });
 		}
 	}
 }

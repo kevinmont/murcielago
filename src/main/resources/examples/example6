@@ -1,5 +1,5 @@
 public void e6(){
  float a;float m;
- expresion=ma*8;   
+ expresion=m*a;
  System.out.println(expresion);
 }

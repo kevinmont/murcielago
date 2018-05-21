@@ -672,51 +672,51 @@ public class LexerF implements java_cup.runtime.Scanner {
             }
           case 34: break;
           case 3: 
-            { save(new Data("Identificador: Identifica una variable o método",yytext(),0,1,"Identificador",1));			return symbol(sym.IDE, yytext());
+            { save(new Data("Identificador: Identifica una variable o método",yytext(), "Identificador",1,0));			return symbol(sym.IDE, yytext());
             }
           case 35: break;
           case 4: 
-            { save(new Data("Numero tipo entero: Entero",yytext(), new Integer(yytext()), 0,"Numero",1));					return symbol(sym.NUMI, new Integer(yytext()));
+            { save(new Data("Numero tipo entero: Entero","Numero",yytext(), new Integer(yytext()),1,new Integer(yytext())));					return symbol(sym.NUMI, new Integer(yytext()));
             }
           case 36: break;
           case 5: 
-            { save(new Data("U: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.U, new Integer(1));
+            { save(new Data("U: Tipo de acceso",yytext(),"Palabra reservada ",1,1));									return symbol(sym.U, new Integer(1));
             }
           case 37: break;
           case 6: 
-            { save(new Data("L: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.L, new Integer(6));
+            { save(new Data("L: Tipo de acceso",yytext(),"Palabra reservada ",1,6));									return symbol(sym.L, new Integer(6));
             }
           case 38: break;
           case 7: 
-            { save(new Data("I: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.I, new Integer(4));
+            { save(new Data("I: Tipo de acceso",yytext(),"Palabra reservada ",1,4));									return symbol(sym.I, new Integer(4));
             }
           case 39: break;
           case 8: 
-            { save(new Data("C: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.C, new Integer(3));
+            { save(new Data("C: Tipo de acceso",yytext(),"Palabra reservada ",1,3));									return symbol(sym.C, new Integer(3));
             }
           case 40: break;
           case 9: 
-            { save(new Data("O: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.O, new Integer(9));
+            { save(new Data("O: Tipo de acceso",yytext(),"Palabra reservada ",1,9));									return symbol(sym.O, new Integer(9));
             }
           case 41: break;
           case 10: 
-            { save(new Data("A: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.A, new Integer(7));
+            { save(new Data("A: Tipo de acceso",yytext(),"Palabra reservada ",1,7));									return symbol(sym.A, new Integer(7));
             }
           case 42: break;
           case 11: 
-            { save(new Data("M: Tipo de acceso",yytext(),"Palabra reservada ",1));								 	return symbol(sym.M, new Integer(0));
+            { save(new Data("M: Tipo de acceso",yytext(),"Palabra reservada ",1,0));								 	return symbol(sym.M, new Integer(0));
             }
           case 43: break;
           case 12: 
-            { save(new Data("R: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.R, new Integer(2));
+            { save(new Data("R: Tipo de acceso",yytext(),"Palabra reservada ",1,2));									return symbol(sym.R, new Integer(2));
             }
           case 44: break;
           case 13: 
-            { save(new Data("E: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.E, new Integer(5));
+            { save(new Data("E: Tipo de acceso",yytext(),"Palabra reservada ",1,5));									return symbol(sym.E, new Integer(5));
             }
           case 45: break;
           case 14: 
-            { save(new Data("G: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.G, new Integer(8));
+            { save(new Data("G: Tipo de acceso",yytext(),"Palabra reservada ",1,8));									return symbol(sym.G, new Integer(8));
             }
           case 46: break;
           case 15: 
@@ -768,7 +768,7 @@ public class LexerF implements java_cup.runtime.Scanner {
             }
           case 58: break;
           case 27: 
-            { save(new Data("public: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.OUT);
+            { save(new Data("out: Imprime",yytext(),"Palabra reservada ",1));									return symbol(sym.OUT);
             }
           case 59: break;
           case 28: 
@@ -784,11 +784,11 @@ public class LexerF implements java_cup.runtime.Scanner {
             }
           case 62: break;
           case 31: 
-            { save(new Data("public: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.SYSTEM);
+            { save(new Data("System: Imprime",yytext(),"Palabra reservada ",1));									return symbol(sym.SYSTEM);
             }
           case 63: break;
           case 32: 
-            { save(new Data("public: Tipo de acceso",yytext(),"Palabra reservada ",1));									return symbol(sym.PRINTLN);
+            { save(new Data("println: Imprime",yytext(),"Palabra reservada ",1));									return symbol(sym.PRINTLN);
             }
           case 64: break;
           default:

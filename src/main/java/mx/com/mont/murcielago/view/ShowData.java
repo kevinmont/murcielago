@@ -22,7 +22,7 @@ public abstract class ShowData extends JFrame {
 		this.setSize(800, 393);
 		JScrollPane scrollPane = new JScrollPane();
 		getContentPane().add(scrollPane, BorderLayout.CENTER);
-		String column[] = {"Tipo","Variable","Valor","Estado","Tipo de Valor","Counter"};
+		String column[] = {"Tipo","Variable","Tipo de Valor","Counter","Valor","Estado"};
 		model= new DefaultTableModel(column,0);
 		table =new JTable(model);	
 		scrollPane.setViewportView(table);
